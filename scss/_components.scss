@@ -1,0 +1,130 @@
+  
+  //
+// components.scss
+//
+
+@each $name,
+$value in $colors {
+    .bg-#{$name} {
+        background-color: #{$value} !important;
+    }
+
+    .bg-soft-#{$name} {
+        background-color: rgba(($value), 0.1) !important;
+    }
+    .text-#{$name} {
+        color: #{$value} !important;
+    }
+
+    // Icons
+    .icon-dual-#{$name} {
+        color: $value;
+        fill: rgba($value, 0.2);
+    }
+
+    .btn-soft-#{$name} {
+        background-color: rgba(($value), 0.25) !important;
+        color: #{$value} !important;
+        &:hover, &:focus, &:active,
+        &.active, &.focus, &:not(:disabled):not(.disabled):active, &:not(:disabled):not(.disabled):active:focus,
+        .open > .dropdown-toggle.btn-primary {
+            background: darken($value, 4%);
+        }
+    }
+    
+    .btn-#{$name} {
+        background: #{$value} !important;
+        border-color: #{$value} !important;
+       
+        &:hover, &:focus, &:active,
+        &.active, &.focus, &:not(:disabled):not(.disabled):active, &:not(:disabled):not(.disabled):active:focus,
+        .open > .dropdown-toggle.btn-primary {
+            background: darken($value, 4%);
+            border-color: darken($value, 4%);
+        }
+    }
+
+    .btn-outline-#{$name} {
+        color: #{$value};
+        border-color: #{$value};
+        &:hover, &:focus, &:active,
+        &.active, &.focus, &:not(:disabled):not(.disabled):active, &:not(:disabled):not(.disabled):active:focus,
+        .open > .dropdown-toggle.btn-primary {
+            background: $value;
+            border-color:$value;
+    
+        }
+    }
+}
+
+
+
+
+*, *::after, *::before {
+    box-sizing: border-box;
+  }
+  
+  .modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 200ms ease-in-out;
+    border: 1px solid black;
+    border-radius: 10px;
+    z-index: 10;
+    background-color: white;
+    width: 500px;
+    max-width: 80%;
+  }
+  
+  .modal.active {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  
+  .modal-header {
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid black;
+  }
+  
+  .modal-header .title {
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+  
+  .modal-header .close-button {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+  
+  .modal-body {
+    padding: 10px 15px;
+  }
+  
+  #overlay {
+    position: fixed;
+    opacity: 0;
+    transition: 200ms ease-in-out;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .5);
+    pointer-events: none;
+  }
+  
+  #overlay.active {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+
+
+  
