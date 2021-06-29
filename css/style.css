@@ -976,6 +976,21 @@ p {
   padding: 240px 0px 240px 0px;
   border-radius: 0px 0px 0px 450px;
 }
+@media screen and (max-width: 1000px) {
+  .bg-home {
+    border-radius: 0px 0px 0px 0px;
+  }
+  .home_img{
+    margin-top: 60px;
+  }
+
+  .bg-cta{
+    border-radius: 0px 0px 0px 0px !important;
+  }
+  .bg-footer{
+    border-radius: 0px 0px 0px 0px !important;
+  }
+}
 
 .home-badge p {
   background-color: #f0f9fa;
@@ -1817,4 +1832,13 @@ animation-iteration-count: infinite;
   display: inline-block;
   visibility: visible;
   border: 2px solid white;
+}
+
+@media screen and (max-width: 1000px) {
+  .footer-info{
+    text-align: center !important;
+  }
+  .footer-info img{
+    height: 50px;
+  }
 }
